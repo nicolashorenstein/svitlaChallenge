@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using svitlaChallenge.Application.Students.Commands.Students;
+using svitlaChallenge.Application.Persons.Commands.Persons;
 using svitlaChallenge.Domain.Results;
 
-namespace svitlaChallenge.Application.Students.Queries;
+namespace svitlaChallenge.Application.Persons.Queries;
 
 public class AddPersonQuery : IRequest<BaseResult>
 {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using svitlaChallenge.Application.Students.Queries;
+using svitlaChallenge.Application.Persons.Queries;
 
-namespace svitlaChallenge.Application.Validators.Students
+namespace svitlaChallenge.Application.Validators.Persons
 {
     public class AddPersonValidator : AbstractValidator<AddPersonQuery>
     {

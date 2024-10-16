@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
-using svitlaChallenge.Application.Students.Queries;
+using svitlaChallenge.Application.Persons.Queries;
 using svitlaChallenge.Domain.Interfaces;
 using svitlaChallenge.Domain.Models;
 using Xunit;

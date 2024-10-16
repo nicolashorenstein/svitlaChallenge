@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using svitlaChallenge.Application.Students.Responses;
+using svitlaChallenge.Application.Persons.Responses;
 
-namespace svitlaChallenge.Application.Students.Queries;
+namespace svitlaChallenge.Application.Persons.Queries;
 
 public class GetAllPersonsQuery : IRequest<PersonsResponse>
 {

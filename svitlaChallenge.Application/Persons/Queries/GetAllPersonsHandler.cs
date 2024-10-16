@@ -2,9 +2,9 @@
 using MediatR;
 using System.Net;
 using Microsoft.Extensions.Logging;
-using svitlaChallenge.Application.Students.Responses;
+using svitlaChallenge.Application.Persons.Responses;
 
-namespace svitlaChallenge.Application.Students.Queries
+namespace svitlaChallenge.Application.Persons.Queries
 {
     public class GetAllPersonsHandler : IRequestHandler<GetAllPersonsQuery, PersonsResponse>
     {

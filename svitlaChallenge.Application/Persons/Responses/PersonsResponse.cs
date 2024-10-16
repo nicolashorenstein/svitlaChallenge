@@ -1,7 +1,7 @@
 ﻿using svitlaChallenge.Domain.Models;
 using svitlaChallenge.Domain.Results;
 
-namespace svitlaChallenge.Application.Students.Responses
+namespace svitlaChallenge.Application.Persons.Responses
 {
     public class PersonsResponse : BaseResult
     {

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using svitlaChallenge.Domain.Models;
 using svitlaChallenge.Infrastructure.Persistence;
 
-namespace svitlaChallenge.Application.Students.Queries
+namespace svitlaChallenge.Application.Persons.Queries
 {
     public class BirthInfoHandler : IRequestHandler<BirthInfoQuery, BaseResult>
     {

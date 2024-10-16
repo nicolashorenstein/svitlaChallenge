@@ -1,14 +1,11 @@
 ﻿using FluentValidation;
 using svitlaChallenge.Domain.Interfaces;
-using svitlaChallenge.Domain.Results;
 using MediatR;
 using System.Net;
 using Microsoft.Extensions.Logging;
-using svitlaChallenge.Application.Students.Responses;
-using svitlaChallenge.Domain.Models;
-using svitlaChallenge.Infrastructure.Persistence;
+using svitlaChallenge.Application.Persons.Responses;
 
-namespace svitlaChallenge.Application.Students.Queries
+namespace svitlaChallenge.Application.Persons.Queries
 {
     public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, PersonsResponse>
     {

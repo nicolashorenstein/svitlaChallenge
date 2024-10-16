@@ -1,8 +1,9 @@
-using svitlaChallenge.Application.Students.Commands.Students;
-using svitlaChallenge.Application.Students.Queries;
+using svitlaChallenge.Application.Persons.Commands;
+using svitlaChallenge.Application.Persons.Queries;
 using svitlaChallenge.Domain.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using svitlaChallenge.Application.Persons.Commands.Persons;
 
 namespace svitlaChallenge.API.Controllers
 {

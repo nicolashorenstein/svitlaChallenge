@@ -5,9 +5,9 @@ using MediatR;
 using System.Net;
 using Microsoft.Extensions.Logging;
 using svitlaChallenge.Domain.Models;
-using svitlaChallenge.Infrastructure.Persistence;
 
-namespace svitlaChallenge.Application.Students.Queries
+
+namespace svitlaChallenge.Application.Persons.Queries
 {
     public class AddPersonHandler : IRequestHandler<AddPersonQuery, BaseResult>
     {

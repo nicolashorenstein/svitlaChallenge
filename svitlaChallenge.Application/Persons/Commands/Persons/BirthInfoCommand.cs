@@ -1,4 +1,4 @@
-﻿namespace svitlaChallenge.Application.Students.Commands.Students;
+﻿namespace svitlaChallenge.Application.Persons.Commands.Persons;
 
 public class BirthInfoCommand
 {
