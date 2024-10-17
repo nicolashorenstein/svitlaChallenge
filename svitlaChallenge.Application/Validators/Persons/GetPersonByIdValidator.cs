@@ -1,15 +1,14 @@
 ﻿using FluentValidation;
 using svitlaChallenge.Application.Persons.Queries;
 
-namespace svitlaChallenge.Application.Validators.Persons
+namespace svitlaChallenge.Application.Validators.Persons;
+
+public class GetPersonByIdValidator : AbstractValidator<GetPersonByIdQuery>
 {
-    public class GetPersonByIdValidator : AbstractValidator<GetPersonByIdQuery>
+    public GetPersonByIdValidator()
     {
-        public GetPersonByIdValidator()
-        {
-            RuleFor(x => x.PersonId)
-                .NotNull()
-                .WithMessage("The PersonId field shouldn't be null.");
-        }
+        RuleFor(x => x.PersonId)
+            .NotNull()
+            .WithMessage("The PersonId field shouldn't be null.");
     }
 }

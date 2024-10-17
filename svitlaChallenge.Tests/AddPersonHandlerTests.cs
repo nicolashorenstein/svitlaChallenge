@@ -7,17 +7,15 @@ using svitlaChallenge.Application.Persons.Commands.Persons;
 using svitlaChallenge.Application.Persons.Queries;
 using svitlaChallenge.Domain.Interfaces;
 using svitlaChallenge.Domain.Models;
-using Xunit;
 
 namespace svitlaChallenge.Tests;
 
 public class AddPersonHandlerTests
 {
-    private readonly Mock<IPersonService> _mockPersonService;
-    private readonly Mock<ILogger<AddPersonHandler>> _mockLogger;
-    private readonly Mock<IValidator<AddPersonQuery>> _mockValidator;
-
     private readonly AddPersonHandler _handler;
+    private readonly Mock<ILogger<AddPersonHandler>> _mockLogger;
+    private readonly Mock<IPersonService> _mockPersonService;
+    private readonly Mock<IValidator<AddPersonQuery>> _mockValidator;
 
     public AddPersonHandlerTests()
     {
@@ -26,7 +24,7 @@ public class AddPersonHandlerTests
         _mockValidator = new Mock<IValidator<AddPersonQuery>>();
         _handler = new AddPersonHandler(_mockPersonService.Object, _mockValidator.Object, _mockLogger.Object);
     }
-    
+
     [Fact]
     public async Task Handle_ReturnsPersonById()
     {
@@ -46,12 +44,12 @@ public class AddPersonHandlerTests
         var personId = Guid.NewGuid();
 
         _mockValidator.Setup(v => v.ValidateAsync(addQuery, It.IsAny<CancellationToken>()))
-                            .ReturnsAsync(new ValidationResult()); // Mocking successful validation
+            .ReturnsAsync(new ValidationResult()); // Mocking successful validation
 
 
         _mockPersonService.Setup(service => service.AddPerson(It.IsAny<Person>()))
-                          .Callback<Person>(p => p.Id = personId) // Set the ID of the person
-                          .Returns(Task.CompletedTask);
+            .Callback<Person>(p => p.Id = personId) // Set the ID of the person
+            .Returns(Task.CompletedTask);
 
         // Act
         var result = await _handler.Handle(addQuery, CancellationToken.None);

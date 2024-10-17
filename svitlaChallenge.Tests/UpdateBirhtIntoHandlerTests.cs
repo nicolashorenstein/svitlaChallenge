@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -7,17 +6,15 @@ using svitlaChallenge.Application.Persons.Commands.Persons;
 using svitlaChallenge.Application.Persons.Queries;
 using svitlaChallenge.Domain.Interfaces;
 using svitlaChallenge.Domain.Models;
-using Xunit;
 
 namespace svitlaChallenge.Tests;
 
 public class UpdateBirhtIntoHandlerTests
 {
-    private readonly Mock<IPersonService> _mockPersonService;
-    private readonly Mock<ILogger<BirthInfoHandler>> _mockLogger;
-    private readonly Mock<IValidator<BirthInfoQuery>> _mockValidator;
-
     private readonly BirthInfoHandler _handler;
+    private readonly Mock<ILogger<BirthInfoHandler>> _mockLogger;
+    private readonly Mock<IPersonService> _mockPersonService;
+    private readonly Mock<IValidator<BirthInfoQuery>> _mockValidator;
 
     public UpdateBirhtIntoHandlerTests()
     {
@@ -51,16 +48,16 @@ public class UpdateBirhtIntoHandlerTests
         };
 
         _mockPersonService.Setup(service => service.GetPersonById(addQuery.PersonId))
-                          .ReturnsAsync(person);
+            .ReturnsAsync(person);
 
         _mockValidator.Setup(v => v.ValidateAsync(addQuery, It.IsAny<CancellationToken>()))
-                            .ReturnsAsync(new ValidationResult()); // Mocking successful validation
+            .ReturnsAsync(new ValidationResult()); // Mocking successful validation
 
 
         _mockPersonService.Setup(service => service.UpdateBirthInfo(
-         It.IsAny<Guid>(),
-         It.IsAny<DateTime>(),
-         It.IsAny<string>()))
+                It.IsAny<Guid>(),
+                It.IsAny<DateTime>(),
+                It.IsAny<string>()))
             .ReturnsAsync(true);
 
         // Act
@@ -72,6 +69,8 @@ public class UpdateBirhtIntoHandlerTests
             person.Id,
             addQuery.Command.BirthDate,
             addQuery.Command.BirthLocation), Times.Once);
-        _mockPersonService.Verify(service => service.UpdateBirthInfo(person.Id, addQuery.Command.BirthDate, addQuery.Command.BirthLocation), Times.Once);
+        _mockPersonService.Verify(
+            service => service.UpdateBirthInfo(person.Id, addQuery.Command.BirthDate, addQuery.Command.BirthLocation),
+            Times.Once);
     }
 }

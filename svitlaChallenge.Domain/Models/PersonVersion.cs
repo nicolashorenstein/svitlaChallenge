@@ -12,7 +12,7 @@ public class PersonVersion
     public DateTime? DeathDate { get; set; }
     public string? DeathLocation { get; set; }
 
-    public DateTime UpdatedAt { get; set; }  // Timestamp for when this version was created
+    public DateTime UpdatedAt { get; set; } // Timestamp for when this version was created
 
     // Navigation property back to the Person
     public virtual Person Person { get; set; }

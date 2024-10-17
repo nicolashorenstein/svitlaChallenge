@@ -1,10 +1,9 @@
 ﻿using svitlaChallenge.Domain.Models;
 using svitlaChallenge.Domain.Results;
 
-namespace svitlaChallenge.Application.Persons.Responses
+namespace svitlaChallenge.Application.Persons.Responses;
+
+public class PersonsResponse : BaseResult
 {
-    public class PersonsResponse : BaseResult
-    {
-       public List<Person> Persons { get; set; } = new List<Person>();
-    }
+    public List<Person> Persons { get; set; } = new();
 }
